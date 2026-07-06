@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     EDIT HERE: [Page Title & Meta Description]
+     Format convention on the econ job market: "Name | Field, University"
+     ============================================================ -->
+<title>Jane A. Doe — Economics Job Market Candidate</title>
+<meta name="description" content="Jane A. Doe is a PhD Candidate in Economics at the University of Placeholder. Research fields: Labor Economics, Applied Microeconometrics.">
+
+<!-- Typography: Inter (UI/body) + Source Serif 4 (display/headings).
+     Loaded from Google Fonts with full system fallbacks, so the page
+     still renders correctly offline or if fonts.googleapis.com is blocked. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+
+<style>
+/* ==============================================================
+   DESIGN TOKENS — muted academic palette
+   ============================================================== */
+:root{
+  --paper:        #fcfcfb;   /* page background */
+  --ink:          #1c2530;   /* primary text: near-black navy-ink */
+  --navy:         #24466b;   /* deep academic navy accent */
+  --navy-dark:    #1a3450;
+  --slate:        #5c6b7a;   /* secondary / meta text */
+  --hairline:     #e3e7eb;   /* borders and rules */
+  --wash:         #f1f4f7;   /* subtle fills: badges, code chips */
+  --wash-navy:    #eef3f8;   /* tinted fill for the JMP feature card */
+
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --maxw: 1040px;
+  --nav-h: 64px;
+  --radius: 6px;
+}
+
+/* ==============================================================
+   RESET & BASE
+   ============================================================== */
+*, *::before, *::after{ box-sizing: border-box; margin: 0; padding: 0; }
+
+html{
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *, *::before, *::after{ transition: none !important; animation: none !important; }
+}
+
+body{
+  font-family: var(--sans);
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+  font-feature-settings: "cv05","cv11"; /* Inter: open digits, single-storey a alternates off by default; subtle refinement */
+}
+
+::selection{ background: var(--navy); color: #fff; }
+
+img{ display: block; max-width: 100%; }
+
+a{ color: var(--navy); text-decoration: none; }
+a:hover{ text-decoration: underline; text-underline-offset: 3px; }
+
+:focus-visible{
+  outline: 2px solid var(--navy);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Every section stops below the sticky nav when anchor-scrolled */
+section[id]{ scroll-margin-top: calc(var(--nav-h) + 24px); }
+
+.wrap{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ==============================================================
+   1. HEADER & NAVIGATION  (sticky)
+   ============================================================== */
+.site-nav{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(252, 252, 251, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.site-nav .nav-inner{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 32px;
+  min-height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.brand{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+.brand:hover{ text-decoration: none; color: var(--navy); }
+
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+}
+
+.nav-links a{
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--slate);
+  letter-spacing: 0.01em;
+  padding: 6px 0;
+}
+.nav-links a:hover{ color: var(--navy); text-decoration: none; }
+
+/* Distinctive CV button in the nav */
+.nav-cv{
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1.5px solid var(--navy);
+  color: var(--navy) !important;
+  padding: 7px 14px !important;
+  border-radius: var(--radius);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.nav-cv:hover{ background: var(--navy); color: #fff !important; }
+.nav-cv:hover svg{ stroke: #fff; }
+.nav-cv svg{ stroke: var(--navy); transition: stroke 0.15s ease; }
+
+/* ==============================================================
+   2. HERO / ABOUT
+   ============================================================== */
+.hero{
+  padding: 88px 0 56px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.hero-grid{
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.hero-kicker{
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--navy);
+  margin-bottom: 18px;
+}
+
+.hero h1{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(2.1rem, 4.5vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+
+.hero .affiliation{
+  font-size: 1.08rem;
+  color: var(--slate);
+  margin-bottom: 26px;
+}
+.hero .affiliation strong{ color: var(--ink); font-weight: 600; }
+
+.hero .bio{
+  font-size: 1.02rem;
+  color: var(--ink);
+  max-width: 58ch;
+  margin-bottom: 28px;
+}
+.hero .bio + .bio{ margin-top: -14px; }
+
+/* Research field badges */
+.fields{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 34px;
+}
+.fields .field-tag{
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--navy-dark);
+  background: var(--wash);
+  border: 1px solid var(--hairline);
+  padding: 6px 13px;
+  border-radius: 999px;
+}
+
+/* Call-to-action buttons */
+.cta-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--navy);
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+.btn:hover{ text-decoration: none; transform: translateY(-1px); }
+.btn-primary{ background: var(--navy); color: #fff; }
+.btn-primary:hover{ background: var(--navy-dark); border-color: var(--navy-dark); }
+.btn-primary svg{ stroke: #fff; }
+.btn-ghost{ background: transparent; color: var(--navy); }
+.btn-ghost:hover{ background: var(--wash-navy); }
+.btn-ghost svg{ stroke: var(--navy); }
+
+/* Headshot */
+.headshot-frame{
+  position: relative;
+  justify-self: end;
+  width: 100%;
+  max-width: 340px;
+}
+.headshot-frame img{
+  width: 100%;
+  aspect-ratio: 4 / 5;          /* classic portrait proportion */
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--hairline);
+  background: var(--wash);      /* visible while placeholder is missing */
+  box-shadow: 0 1px 2px rgba(28,37,48,0.05), 0 12px 32px -12px rgba(36,70,107,0.22);
+}
+/* thin offset navy rule behind the photo — quiet signature detail */
+.headshot-frame::after{
+  content: "";
+  position: absolute;
+  inset: 14px -14px -14px 14px;
+  border: 1.5px solid var(--navy);
+  border-radius: 8px;
+  opacity: 0.28;
+  z-index: -1;
+}
+.headshot-caption{
+  margin-top: 26px;
+  font-size: 0.82rem;
+  color: var(--slate);
+  text-align: center;
+}
+
+/* Down-arrow section links */
+.hero-anchors{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 60px;
+}
+.hero-anchors a{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--slate);
+  letter-spacing: 0.02em;
+}
+.hero-anchors a:hover{ color: var(--navy); text-decoration: none; }
+.hero-anchors svg{ stroke: currentColor; }
+
+/* ==============================================================
+   SHARED SECTION SCAFFOLDING
+   ============================================================== */
+.section{ padding: 72px 0; border-bottom: 1px solid var(--hairline); }
+.section:last-of-type{ border-bottom: none; }
+
+.section-title{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.75rem;
+  letter-spacing: -0.005em;
+  margin-bottom: 8px;
+}
+.section-sub{
+  font-size: 0.95rem;
+  color: var(--slate);
+  margin-bottom: 44px;
+}
+
+.subheading{
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--navy);
+  margin: 52px 0 24px;
+}
+.subheading:first-of-type{ margin-top: 0; }
+
+/* ==============================================================
+   3. BACKGROUND / EDUCATION TIMELINE
+   ============================================================== */
+.timeline{
+  list-style: none;
+  position: relative;
+  padding-left: 28px;
+  max-width: 640px;
+}
+.timeline::before{
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 1.5px;
+  background: var(--hairline);
+}
+.timeline li{
+  position: relative;
+  padding-bottom: 34px;
+}
+.timeline li:last-child{ padding-bottom: 0; }
+.timeline li::before{
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 7px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--navy);
+}
+.timeline .tl-years{
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 3px;
+}
+.timeline .tl-role{
+  font-weight: 600;
+  font-size: 1.03rem;
+}
+.timeline .tl-inst{
+  color: var(--slate);
+  font-size: 0.95rem;
+}
+
+/* ==============================================================
+   4. RESEARCH
+   ============================================================== */
+.paper{
+  padding: 28px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.paper:last-child{ border-bottom: none; }
+
+.paper-title{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.28rem;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+
+.paper-authors{
+  font-size: 0.93rem;
+  color: var(--slate);
+  margin-bottom: 14px;
+}
+.paper-authors .me{ color: var(--ink); font-weight: 500; }
+
+.paper-links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.paper-links a{
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--navy);
+  background: var(--wash);
+  border: 1px solid var(--hairline);
+  padding: 6px 13px;
+  border-radius: var(--radius);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.paper-links a:hover{
+  text-decoration: none;
+  background: var(--wash-navy);
+  border-color: var(--navy);
+}
+.paper-links svg{ stroke: var(--navy); }
+
+.abstract{
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: var(--ink);
+  max-width: 76ch;
+}
+.abstract .abstract-label{
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--slate);
+  margin-right: 8px;
+}
+
+/* Job Market Paper — featured card */
+.jmp{
+  background: var(--wash-navy);
+  border: 1px solid var(--hairline);
+  border-left: 3px solid var(--navy);
+  border-radius: var(--radius);
+  padding: 34px 36px;
+}
+.jmp .paper{ padding: 0; border: none; }
+.jmp .paper-title{ font-size: 1.5rem; }
+
+/* Works in progress — compact rows */
+.wip{
+  padding: 20px 0;
+  border-bottom: 1px solid var(--hairline);
+  max-width: 76ch;
+}
+.wip:last-child{ border-bottom: none; }
+.wip .wip-title{
+  font-weight: 600;
+  font-size: 1.02rem;
+  margin-bottom: 2px;
+}
+.wip .wip-authors{
+  font-size: 0.88rem;
+  color: var(--slate);
+  margin-bottom: 8px;
+}
+.wip p{ font-size: 0.94rem; color: var(--ink); }
+
+/* ==============================================================
+   5. PRESENTATIONS
+   ============================================================== */
+.pres-year-block{ margin-bottom: 40px; }
+.pres-year-block:last-child{ margin-bottom: 0; }
+
+.pres-year{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--ink);
+  padding-bottom: 10px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.pres-list{ list-style: none; max-width: 76ch; }
+.pres-list li{
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 20px;
+  padding: 11px 0;
+  border-bottom: 1px dashed var(--hairline);
+  font-size: 0.97rem;
+}
+.pres-list li:last-child{ border-bottom: none; }
+.pres-list .pres-month{
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+  padding-top: 3px;
+}
+.pres-list .pres-note{ color: var(--slate); font-size: 0.88rem; }
+
+/* ==============================================================
+   6. TEACHING
+   ============================================================== */
+.teach-inst{ margin-bottom: 48px; }
+.teach-inst:last-child{ margin-bottom: 0; }
+
+.teach-inst-name{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.25rem;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.teach-role{
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--navy);
+  margin: 22px 0 10px;
+}
+.teach-role:first-of-type{ margin-top: 0; }
+
+.course-list{ list-style: none; max-width: 76ch; }
+.course-list li{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+  padding: 9px 0;
+  border-bottom: 1px dashed var(--hairline);
+  font-size: 0.97rem;
+}
+.course-list li:last-child{ border-bottom: none; }
+.course-name{ font-weight: 500; }
+.course-level{
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--slate);
+  background: var(--wash);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+.course-term{
+  margin-left: auto;
+  font-size: 0.88rem;
+  color: var(--slate);
+  white-space: nowrap;
+}
+
+/* ==============================================================
+   7. FOOTER
+   ============================================================== */
+.site-footer{
+  background: var(--ink);
+  color: #c7cfd8;
+  padding: 56px 0 28px;
+  margin-top: 24px;
+}
+.footer-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.footer-name{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.footer-addr{
+  font-style: normal;
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+.footer-links{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+.footer-links a{
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #e8edf2;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.footer-links a:hover{ color: #fff; }
+.footer-links svg{ stroke: #e8edf2; }
+.copyright{
+  padding-top: 24px;
+  font-size: 0.82rem;
+  color: #8b98a6;
+  text-align: center;
+}
+
+/* ==============================================================
+   RESPONSIVE
+   ============================================================== */
+@media (max-width: 900px){
+  .hero-grid{
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  /* Photo above text on mobile reads more naturally */
+  .hero-photo{ order: -1; }
+  .headshot-frame{ justify-self: start; max-width: 260px; }
+  .hero{ padding: 56px 0 44px; }
+  .footer-grid{ grid-template-columns: 1fr; gap: 32px; }
+  .footer-links{ align-items: flex-start; }
+}
+
+@media (max-width: 640px){
+  body{ font-size: 15.5px; }
+  .wrap, .site-nav .nav-inner{ padding-left: 20px; padding-right: 20px; }
+  .site-nav .nav-inner{ padding-top: 10px; padding-bottom: 10px; }
+  .nav-links{ gap: 16px; }
+  .nav-links a{ font-size: 0.85rem; }
+  .section{ padding: 52px 0; }
+  .jmp{ padding: 24px 20px; }
+  .jmp .paper-title{ font-size: 1.28rem; }
+  .pres-list li{ grid-template-columns: 64px 1fr; gap: 14px; }
+  .course-term{ margin-left: 0; flex-basis: 100%; }
+  .hero-anchors{ gap: 20px; margin-top: 44px; }
+  .cta-row .btn{ flex: 1 1 auto; justify-content: center; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ==============================================================
+     1. HEADER & NAVIGATION
+     ============================================================== -->
+<header class="site-nav">
+  <nav class="nav-inner" aria-label="Main navigation">
+    <!-- EDIT HERE: [Your Initials or Short Name] -->
+    <a class="brand" href="#top">J. A. Doe</a>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#presentations">Presentations</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li>
+        <!-- EDIT HERE: [Path to your CV PDF, e.g. assets/cv.pdf] -->
+        <a class="nav-cv" href="assets/cv.pdf" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          CV (PDF)
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ==============================================================
+     2. HERO / ABOUT SECTION
+     ============================================================== -->
+<section class="hero" id="about">
+  <div class="wrap">
+    <div class="hero-grid">
+
+      <!-- LEFT COLUMN -->
+      <div class="hero-text">
+        <!-- EDIT HERE: [Kicker line — e.g. "Economics Job Market Candidate 2026–27"] -->
+        <p class="hero-kicker">Economics Job Market Candidate · 2026–27</p>
+
+        <!-- EDIT HERE: [Your Full Name] -->
+        <h1>Hello, I&rsquo;m Jane&nbsp;A.&nbsp;Doe.</h1>
+
+        <!-- EDIT HERE: [Current Title & Affiliation] -->
+        <p class="affiliation">
+          <strong>PhD Candidate in Economics</strong> · Department of Economics, University of Placeholder
+        </p>
+
+        <!-- EDIT HERE: [Short Biography — 2–4 sentences.
+             Convention: field(s), one line on your JMP, availability for interviews.] -->
+        <p class="bio">
+          I am an applied microeconomist studying labor markets and the economics of education.
+          My job market paper examines how firm-level shocks propagate to worker outcomes using
+          linked employer&ndash;employee data. I will be available for interviews at the
+          2026&ndash;27 job market (EJME, ASSA, and the European job market in Rotterdam).
+        </p>
+
+        <!-- EDIT HERE: [Research Fields — one badge per field] -->
+        <div class="fields" aria-label="Research fields">
+          <span class="field-tag">Labor Economics</span>
+          <span class="field-tag">Economics of Education</span>
+          <span class="field-tag">Applied Microeconometrics</span>
+        </div>
+
+        <div class="cta-row">
+          <!-- EDIT HERE: [Your Email Address] -->
+          <a class="btn btn-primary" href="mailto:jane.doe@university.edu">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+            Email Me
+          </a>
+          <!-- EDIT HERE: [Path to your CV PDF] -->
+          <a class="btn btn-ghost" href="assets/cv.pdf" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: HEADSHOT -->
+      <div class="hero-photo">
+        <figure class="headshot-frame">
+          <!-- EDIT HERE: [Professional Headshot — place your photo at assets/headshot.jpg,
+               ideally cropped to a 4:5 portrait, at least 800px wide] -->
+          <img src="assets/headshot.jpg" alt="Portrait of Jane A. Doe" width="680" height="850">
+          <!-- EDIT HERE: [Optional pronunciation line or pronouns — or delete this caption] -->
+          <figcaption class="headshot-caption">jane.doe@university.edu · she/her</figcaption>
+        </figure>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM ROW: DOWN-ARROW ANCHORS -->
+    <div class="hero-anchors">
+      <a href="#research"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>Research</a>
+      <a href="#presentations"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>Presentations</a>
+      <a href="#teaching"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>Teaching</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================================
+     3. BACKGROUND / EDUCATION TIMELINE
+     ============================================================== -->
+<section class="section" id="background">
+  <div class="wrap">
+    <h2 class="section-title">Background</h2>
+    <p class="section-sub">Education and academic positions.</p>
+
+    <ul class="timeline">
+      <!-- EDIT HERE: [Timeline Entry 1 — most recent first] -->
+      <li>
+        <div class="tl-years">2021 — Present</div>
+        <div class="tl-role">PhD in Economics</div>
+        <div class="tl-inst">Department of Economics, University of Placeholder</div>
+      </li>
+      <!-- EDIT HERE: [Timeline Entry 2] -->
+      <li>
+        <div class="tl-years">2019 — 2021</div>
+        <div class="tl-role">MSc in Economics (Distinction)</div>
+        <div class="tl-inst">School of Economics, Another University</div>
+      </li>
+      <!-- EDIT HERE: [Timeline Entry 3] -->
+      <li>
+        <div class="tl-years">2018 — 2019</div>
+        <div class="tl-role">Research Assistant</div>
+        <div class="tl-inst">Institute for Policy Research</div>
+      </li>
+      <!-- EDIT HERE: [Timeline Entry 4 — duplicate <li> blocks to add more] -->
+      <li>
+        <div class="tl-years">2015 — 2018</div>
+        <div class="tl-role">BSc in Economics (First-Class Honours)</div>
+        <div class="tl-inst">Undergraduate University</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==============================================================
+     4. RESEARCH  (master container id="research")
+     ============================================================== -->
+<section class="section" id="research">
+  <div class="wrap">
+    <h2 class="section-title">Research</h2>
+    <p class="section-sub">Job market paper, working papers, and works in progress.</p>
+
+    <!-- ---------- 4.1 JOB MARKET PAPER ---------- -->
+    <h3 class="subheading">Job Market Paper</h3>
+
+    <div class="jmp">
+      <article class="paper">
+        <!-- EDIT HERE: [JMP Title] -->
+        <h4 class="paper-title">Firm Shocks and Worker Trajectories: Evidence from Linked Employer&ndash;Employee Data</h4>
+
+        <!-- EDIT HERE: [JMP Co-authors — or write "Sole author"] -->
+        <p class="paper-authors">Sole author</p>
+
+        <div class="paper-links">
+          <!-- EDIT HERE: [JMP file links — update hrefs] -->
+          <a href="assets/jmp.pdf" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Paper (PDF)
+          </a>
+          <a href="assets/jmp_slides.pdf" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Slides
+          </a>
+          <a href="https://github.com/your-username/jmp-replication" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            Code
+          </a>
+        </div>
+
+        <!-- EDIT HERE: [JMP Abstract] -->
+        <p class="abstract">
+          <span class="abstract-label">Abstract</span>
+          This paper studies how idiosyncratic firm-level shocks transmit to worker earnings, mobility,
+          and long-run career trajectories. Using administrative linked employer&ndash;employee data and
+          a novel identification strategy based on exogenous variation in firm export demand, I show that
+          negative shocks generate persistent earnings losses concentrated among workers with the least
+          transferable skills. A structural decomposition attributes roughly two-thirds of these losses
+          to reduced within-firm wage growth rather than displacement. The results imply that policies
+          targeting retention during transitory shocks can substantially reduce long-run earnings scarring.
+        </p>
+      </article>
+    </div>
+
+    <!-- ---------- 4.2 OTHER WORKING PAPERS ---------- -->
+    <h3 class="subheading">Other Working Papers</h3>
+
+    <!-- EDIT HERE: [Working Paper 1] -->
+    <article class="paper">
+      <h4 class="paper-title">Teacher Turnover and Student Achievement: Quasi-Experimental Evidence</h4>
+      <!-- EDIT HERE: [WP1 Co-authors] -->
+      <p class="paper-authors">with <span class="me">Co-author One</span> and <span class="me">Co-author Two</span></p>
+      <div class="paper-links">
+        <a href="assets/wp1.pdf" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Paper (PDF)
+        </a>
+        <a href="assets/wp1_slides.pdf" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Slides
+        </a>
+        <a href="https://github.com/your-username/wp1-code" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Code
+        </a>
+      </div>
+      <!-- EDIT HERE: [WP1 Abstract] -->
+      <p class="abstract">
+        <span class="abstract-label">Abstract</span>
+        We estimate the causal effect of teacher turnover on student outcomes by exploiting staggered
+        pension-eligibility thresholds that generate plausibly exogenous variation in retirement timing.
+        Turnover reduces test scores in affected classrooms, with the effect driven almost entirely by
+        the loss of high value-added teachers. Replacement quality, not disruption per se, explains
+        the bulk of the achievement decline.
+      </p>
+    </article>
+
+    <!-- EDIT HERE: [Working Paper 2] -->
+    <article class="paper">
+      <h4 class="paper-title">Minimum Wages and the Composition of Job Vacancies</h4>
+      <!-- EDIT HERE: [WP2 Co-authors] -->
+      <p class="paper-authors">with <span class="me">Co-author Three</span></p>
+      <div class="paper-links">
+        <a href="assets/wp2.pdf" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Paper (PDF)
+        </a>
+        <a href="assets/wp2_slides.pdf" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Slides
+        </a>
+        <a href="https://github.com/your-username/wp2-code" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Code
+        </a>
+      </div>
+      <!-- EDIT HERE: [WP2 Abstract] -->
+      <p class="abstract">
+        <span class="abstract-label">Abstract</span>
+        Using the near-universe of online job postings, we document how minimum wage increases reshape
+        the composition of advertised vacancies. Firms respond by raising posted skill requirements and
+        consolidating part-time positions into full-time roles, consistent with labor&ndash;labor
+        substitution toward more productive workers rather than aggregate employment reductions.
+      </p>
+    </article>
+
+    <!-- EDIT HERE: [Working Paper 3 — duplicate or delete this block as needed] -->
+    <article class="paper">
+      <h4 class="paper-title">Information Frictions in Graduate Program Choice</h4>
+      <!-- EDIT HERE: [WP3 Co-authors] -->
+      <p class="paper-authors">Sole author</p>
+      <div class="paper-links">
+        <a href="assets/wp3.pdf" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Paper (PDF)
+        </a>
+        <a href="assets/wp3_slides.pdf" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Slides
+        </a>
+        <a href="https://github.com/your-username/wp3-code" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Code
+        </a>
+      </div>
+      <!-- EDIT HERE: [WP3 Abstract] -->
+      <p class="abstract">
+        <span class="abstract-label">Abstract</span>
+        A randomized information intervention reveals that prospective graduate students systematically
+        misperceive program-level labor market returns. Correcting these beliefs shifts application
+        portfolios toward higher-return programs, with the largest responses among first-generation
+        applicants, suggesting information frictions contribute to socioeconomic sorting in graduate education.
+      </p>
+    </article>
+
+    <!-- ---------- 4.3 WORKS IN PROGRESS ---------- -->
+    <h3 class="subheading">Works in Progress</h3>
+
+    <!-- EDIT HERE: [Work in Progress 1] -->
+    <div class="wip">
+      <p class="wip-title">The Dynamics of Occupational Licensing Across Borders</p>
+      <p class="wip-authors">with Co-author Four</p>
+      <p>We study how cross-country recognition of occupational licenses affects the migration and earnings of credentialed workers. Draft expected Spring&nbsp;2027.</p>
+    </div>
+
+    <!-- EDIT HERE: [Work in Progress 2] -->
+    <div class="wip">
+      <p class="wip-title">Automation Exposure and Mid-Career Retraining</p>
+      <p class="wip-authors">Sole author</p>
+      <p>This project links automation risk measures to enrollment in publicly subsidized retraining programs. Early results suggest take-up is lowest exactly where exposure is highest.</p>
+    </div>
+
+    <!-- EDIT HERE: [Work in Progress 3 — duplicate or delete as needed] -->
+    <div class="wip">
+      <p class="wip-title">Local Labor Markets and the Geography of Remote Work</p>
+      <p class="wip-authors">with Co-author Five and Co-author Six</p>
+      <p>Using geolocated vacancy and residence data, we trace how the post-2020 rise of remote work reallocated labor demand across commuting zones.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==============================================================
+     5. PRESENTATIONS
+     ============================================================== -->
+<section class="section" id="presentations">
+  <div class="wrap">
+    <h2 class="section-title">Presentations</h2>
+    <p class="section-sub">Seminars, workshops, and conferences. <span class="pres-note">* denotes scheduled.</span></p>
+
+    <!-- EDIT HERE: [Presentations — Year 2026] -->
+    <div class="pres-year-block">
+      <h3 class="pres-year">2026</h3>
+      <ul class="pres-list">
+        <li><span class="pres-month">Dec</span><span>European Job Market Meetings (EEA), Rotterdam&nbsp;*</span></li>
+        <li><span class="pres-month">Sep</span><span>EALE Annual Conference, Placeholder City</span></li>
+        <li><span class="pres-month">Jun</span><span>Society of Labor Economists (SOLE) Annual Meeting</span></li>
+        <li><span class="pres-month">Mar</span><span>Applied Micro Seminar, University of Placeholder</span></li>
+      </ul>
+    </div>
+
+    <!-- EDIT HERE: [Presentations — Year 2025] -->
+    <div class="pres-year-block">
+      <h3 class="pres-year">2025</h3>
+      <ul class="pres-list">
+        <li><span class="pres-month">Nov</span><span>Labor Economics Workshop, Another University</span></li>
+        <li><span class="pres-month">Aug</span><span>EEA-ESEM Congress, Placeholder City</span></li>
+        <li><span class="pres-month">May</span><span>PhD Student Seminar Series, University of Placeholder</span></li>
+      </ul>
+    </div>
+
+    <!-- EDIT HERE: [Presentations — earlier years: duplicate a pres-year-block] -->
+  </div>
+</section>
+
+<!-- ==============================================================
+     6. TEACHING
+     ============================================================== -->
+<section class="section" id="teaching">
+  <div class="wrap">
+    <h2 class="section-title">Teaching</h2>
+    <p class="section-sub">Grouped by institution and role.</p>
+
+    <!-- EDIT HERE: [Institution 1] -->
+    <div class="teach-inst">
+      <h3 class="teach-inst-name">University of Placeholder</h3>
+
+      <!-- EDIT HERE: [Role 1 at Institution 1] -->
+      <p class="teach-role">Teaching Associate (instructor of record)</p>
+      <ul class="course-list">
+        <li>
+          <span class="course-name">Introduction to Econometrics</span>
+          <span class="course-level">Undergraduate</span>
+          <span class="course-term">Autumn 2025</span>
+        </li>
+        <li>
+          <span class="course-name">Labor Economics</span>
+          <span class="course-level">Undergraduate</span>
+          <span class="course-term">Spring 2025</span>
+        </li>
+      </ul>
+
+      <!-- EDIT HERE: [Role 2 at Institution 1] -->
+      <p class="teach-role">Teaching Assistant</p>
+      <ul class="course-list">
+        <li>
+          <span class="course-name">Microeconomic Theory I</span>
+          <span class="course-level">Graduate (PhD core)</span>
+          <span class="course-term">Autumn 2023, Autumn 2024</span>
+        </li>
+        <li>
+          <span class="course-name">Applied Econometrics</span>
+          <span class="course-level">Graduate (MSc)</span>
+          <span class="course-term">Spring 2023</span>
+        </li>
+        <li>
+          <span class="course-name">Principles of Economics</span>
+          <span class="course-level">Undergraduate</span>
+          <span class="course-term">Autumn 2022</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- EDIT HERE: [Institution 2 — duplicate or delete this block] -->
+    <div class="teach-inst">
+      <h3 class="teach-inst-name">Another University</h3>
+
+      <p class="teach-role">Teaching Assistant</p>
+      <ul class="course-list">
+        <li>
+          <span class="course-name">Mathematics for Economists</span>
+          <span class="course-level">Graduate (MSc)</span>
+          <span class="course-term">Autumn 2020</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ==============================================================
+     7. FOOTER
+     ============================================================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+
+      <div>
+        <!-- EDIT HERE: [Footer Name] -->
+        <p class="footer-name">Jane A. Doe</p>
+        <!-- EDIT HERE: [Full Department & University Address] -->
+        <address class="footer-addr">
+          Department of Economics<br>
+          University of Placeholder<br>
+          123 Academic Way, Office 4.56<br>
+          City, Postcode, Country
+        </address>
+      </div>
+
+      <div class="footer-links">
+        <!-- EDIT HERE: [Footer Email] -->
+        <a href="mailto:jane.doe@university.edu">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+          jane.doe@university.edu
+        </a>
+        <!-- EDIT HERE: [Footer CV link] -->
+        <a href="assets/cv.pdf" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Curriculum Vitae (PDF)
+        </a>
+      </div>
+
+    </div>
+
+    <!-- EDIT HERE: [Copyright Name] -->
+    <p class="copyright">&copy; 2026 Jane A. Doe · Built with plain HTML &amp; CSS · Last updated July 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
