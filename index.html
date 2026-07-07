@@ -151,6 +151,7 @@ section[id]{ scroll-margin-top: calc(var(--nav-h) + 24px); }
 .nav-cv:hover svg{ stroke: #fff; }
 .nav-cv svg{ stroke: var(--navy); transition: stroke 0.15s ease; }
 
+
 /* ==============================================================
    2. HERO / ABOUT
    ============================================================== */
@@ -184,6 +185,17 @@ section[id]{ scroll-margin-top: calc(var(--nav-h) + 24px); }
   margin-bottom: 14px;
 }
 
+/* Custom Rule: Creates small introductory text line for your name */
+.hero h1 .welcome-intro {
+  display: block;           /* Forces your name down to the next line */
+  font-size: 1.1rem;        /* Small, sophisticated text sizing */
+  font-weight: 400;         /* Cleaner, thinner text-weight for visual contrast */
+  font-family: var(--sans); /* Uses the clean secondary font layout */
+  color: var(--slate);      /* Understated color palette so your name takes focus */
+  margin-bottom: 8px;       /* Adds space right above your name */
+  letter-spacing: 0.02em;
+}
+
 .hero .affiliation{
   font-size: 1.08rem;
   color: var(--slate);
@@ -197,7 +209,7 @@ section[id]{ scroll-margin-top: calc(var(--nav-h) + 24px); }
   max-width: 58ch;
   margin-bottom: 28px;
 }
-.hero .bio + .bio{ margin-top: -14px; }
+.hero .bio + .bio{ margin-top: -14px; } 
 
 /* Research field badges */
 .fields{
