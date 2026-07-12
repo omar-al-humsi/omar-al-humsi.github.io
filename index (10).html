@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     EDIT HERE: [Page Title & Meta Description]
+     ============================================================ -->
+<title>Omar Al Humsi — Public &amp; Labor Economics | Job Market Candidate 2026–27</title>
+<meta name="description" content="Omar Al Humsi is a PhD candidate in Economics at CY Cergy Paris Université (THEMA) and ESSEC Business School. Fields: Public Economics, Labor Economics, Macroeconomics. On the 2026–27 economics job market.">
+
+<!-- Anti-FOUC: resolve the theme before first paint so there is no flash. -->
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+    } catch (e) {}
+  })();
+</script>
+
+<!-- Typography: Playfair Display (editorial display serif, headings only)
+     + Inter (body/UI). Two families, three weights each — fast to load. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==============================================================
+   DESIGN TOKENS — matte editorial palette
+   Print-inspired: warm off-white paper, neutral charcoal ink,
+   a desaturated ink-slate accent in light mode, and an antique
+   parchment-brass accent in dark mode. Deliberately no
+   high-saturation blue anywhere.
+   ============================================================== */
+:root,
+[data-theme="light"]{
+  --paper:        #faf9f6;   /* warm off-white, like uncoated stock */
+  --surface:      #ffffff;
+  --ink:          #1f2328;   /* neutral charcoal-black, not blue-black */
+  --ink-soft:     #43494f;   /* body text */
+  --accent:       #31424f;   /* desaturated ink-slate — matte, not tech-blue */
+  --accent-strong:#243139;   /* hover state */
+  --slate:        #6f6e68;   /* warm gray meta text */
+  --hairline:     #e6e3dc;   /* warm rules */
+  --wash:         #f1efe9;   /* subtle warm fills */
+  --wash-feature: #f4f1e8;   /* cream tint for the JMP card */
+
+  --footer-bg:    #1f2328;
+  --footer-fg:    #c9c6bf;
+  --footer-fg-strong: #f5f3ee;
+  --footer-line:  rgba(255,255,255,0.12);
+  --footer-muted: #8c8a83;
+
+  --nav-bg:       rgba(250, 249, 246, 0.9);
+  --shadow-photo: 0 1px 2px rgba(31,35,40,0.06), 0 10px 28px -12px rgba(31,35,40,0.22);
+  --shadow-card:  0 1px 2px rgba(31,35,40,0.04), 0 10px 26px -14px rgba(31,35,40,0.16);
+}
+
+/* ---- DARK: oxford charcoal + parchment ink + antique brass accent ---- */
+[data-theme="dark"]{
+  --paper:        #191b1d;   /* neutral oxford charcoal — no blue cast */
+  --surface:      #202326;
+  --ink:          #e9e6df;   /* warm parchment off-white */
+  --ink-soft:     #c6c2b9;
+  --accent:       #c0ae8c;   /* muted antique brass — scholarly, matte */
+  --accent-strong:#d3c3a4;
+  --slate:        #9d9a92;
+  --hairline:     #2e3134;
+  --wash:         #232629;
+  --wash-feature: #24251f;   /* faint warm tint for the JMP card */
+
+  --footer-bg:    #141517;
+  --footer-fg:    #b2afa7;
+  --footer-fg-strong: #efece5;
+  --footer-line:  rgba(255,255,255,0.08);
+  --footer-muted: #77746c;
+
+  --nav-bg:       rgba(25, 27, 29, 0.85);
+  --shadow-photo: 0 1px 2px rgba(0,0,0,0.45), 0 14px 34px -14px rgba(0,0,0,0.6);
+  --shadow-card:  0 1px 2px rgba(0,0,0,0.35), 0 12px 30px -16px rgba(0,0,0,0.55);
+}
+
+:root{
+  --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --maxw: 1020px;
+  --nav-h: 64px;
+  --radius: 6px;
+  --radius-photo: 16px;      /* soft rounded corners for the square portrait */
+}
+
+/* ==============================================================
+   RESET & BASE
+   ============================================================== */
+*, *::before, *::after{ box-sizing: border-box; margin: 0; padding: 0; }
+
+html{ scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *, *::before, *::after{ transition: none !important; animation: none !important; }
+}
+
+body{
+  font-family: var(--sans);
+  font-size: 16.5px;
+  line-height: 1.6;                 /* body rhythm within the 1.5–1.6 band */
+  color: var(--ink);
+  background: var(--paper);
+  font-feature-settings: "cv05","cv11";
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+::selection{ background: var(--accent); color: var(--paper); }
+
+img{ display: block; max-width: 100%; }
+
+a{ color: var(--accent); text-decoration: none; }
+a:hover{ text-decoration: underline; text-underline-offset: 3px; }
+
+:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+section[id]{ scroll-margin-top: calc(var(--nav-h) + 24px); }
+
+.wrap{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Global readable-measure rule: no text block exceeds ~70 characters */
+.measure{ max-width: 70ch; }
+
+/* ==============================================================
+   1. HEADER & NAVIGATION (sticky)
+   ============================================================== */
+.site-nav{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--hairline);
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.site-nav .nav-inner{
+  position: relative;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 32px;
+  min-height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.18rem;
+  letter-spacing: 0.005em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.brand:hover{ text-decoration: none; color: var(--accent); }
+
+.nav-right{ display: flex; align-items: center; gap: 24px; }
+
+.nav-links{ display: flex; align-items: center; gap: 24px; list-style: none; }
+.nav-links a{
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--slate);
+  letter-spacing: 0.01em;
+  padding: 6px 0;
+  transition: color 0.15s ease;
+}
+.nav-links a:hover{ color: var(--accent); text-decoration: none; }
+
+.nav-cv{
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1.5px solid var(--accent);
+  color: var(--accent) !important;
+  padding: 7px 14px !important;
+  border-radius: var(--radius);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.nav-cv:hover{ background: var(--accent); color: var(--paper) !important; text-decoration: none; }
+.nav-cv:hover svg{ stroke: var(--paper); }
+.nav-cv svg{ stroke: var(--accent); transition: stroke 0.15s ease; }
+
+/* --------------------------------------------------------------
+   THEME TOGGLE — borderless, flows into the nav as a quiet icon.
+   No box, no background: just a vector glyph that inherits the
+   nav link color and warms to the accent on hover.
+   -------------------------------------------------------------- */
+.theme-toggle{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;                 /* invisible hit area, ~36px total */
+  margin: -8px;                 /* hit area doesn't disturb layout */
+  border: none;
+  background: none;
+  color: var(--slate);
+  cursor: pointer;
+  transition: color 0.15s ease, transform 0.2s ease;
+}
+.theme-toggle:hover{ color: var(--accent); transform: rotate(12deg); }
+.theme-toggle svg{ width: 18px; height: 18px; stroke: currentColor; }
+.theme-toggle .icon-moon{ display: none; }
+.theme-toggle .icon-sun{ display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon{ display: block; }
+[data-theme="dark"] .theme-toggle .icon-sun{ display: none; }
+
+/* Mobile hamburger — borderless to match the toggle */
+.nav-burger{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: none;
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+.nav-burger svg{ width: 22px; height: 22px; stroke: currentColor; }
+
+.nav-bar-controls{ display: flex; align-items: center; gap: 14px; }
+
+/* ==============================================================
+   2. HERO / CONTACT & AFFILIATION
+   ============================================================== */
+.hero{ padding: 80px 0 56px; border-bottom: 1px solid var(--hairline); }
+
+.hero-grid{
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.hero-kicker{
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.hero h1{
+  font-family: var(--serif);
+  font-weight: 600;
+  /* Fluid type scale: 2.2rem → 3.1rem across viewports */
+  font-size: clamp(2.2rem, 4.8vw, 3.1rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.hero .affiliation{
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--slate);
+  margin-bottom: 20px;
+  max-width: 52ch;
+}
+.hero .affiliation strong{ color: var(--ink); font-weight: 600; }
+
+.hero .bio{
+  font-size: 1.02rem;
+  color: var(--ink-soft);
+  max-width: 58ch;
+  margin-bottom: 26px;
+}
+
+.fields{ display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+.field-tag{
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--slate);
+  background: var(--wash);
+  border: 1px solid var(--hairline);
+  padding: 6px 13px;
+  border-radius: 999px;
+}
+.field-tag.is-primary{
+  color: var(--paper);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.cta-row{ display: flex; flex-wrap: wrap; gap: 14px; }
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--accent);
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+.btn:hover{ text-decoration: none; transform: translateY(-1px); }
+.btn-primary{ background: var(--accent); color: var(--paper); }
+.btn-primary:hover{ background: var(--accent-strong); border-color: var(--accent-strong); }
+.btn-primary svg{ stroke: var(--paper); }
+.btn-ghost{ background: transparent; color: var(--accent); }
+.btn-ghost:hover{ background: var(--wash); }
+.btn-ghost svg{ stroke: var(--accent); }
+
+/* --------------------------------------------------------------
+   HEADSHOT — perfect square, soft rounded corners, micro-border
+   + one gentle depth shadow. No offset frames, no decoration.
+   -------------------------------------------------------------- */
+.headshot-frame{
+  justify-self: end;
+  width: 100%;
+  max-width: 300px;
+}
+.headshot-frame img{
+  width: 100%;
+  aspect-ratio: 1 / 1;                 /* perfect square */
+  object-fit: cover;
+  border-radius: var(--radius-photo);  /* elegant soft corners */
+  border: 1px solid var(--hairline);   /* micro-border */
+  outline: 1px solid rgba(255,255,255,0.6); /* hairline inner light (light mode) */
+  outline-offset: -2px;
+  background: var(--wash);
+  box-shadow: var(--shadow-photo);     /* subtle lift, not a heavy block */
+}
+[data-theme="dark"] .headshot-frame img{ outline-color: rgba(255,255,255,0.06); }
+
+.headshot-caption{
+  margin-top: 18px;
+  font-size: 0.82rem;
+  color: var(--slate);
+  text-align: center;
+}
+.headshot-caption a{ color: var(--slate); }
+.headshot-caption a:hover{ color: var(--accent); }
+
+.hero-anchors{ display: flex; flex-wrap: wrap; gap: 28px; margin-top: 54px; }
+.hero-anchors a{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--slate);
+  letter-spacing: 0.02em;
+}
+.hero-anchors a:hover{ color: var(--accent); text-decoration: none; }
+.hero-anchors svg{ stroke: currentColor; }
+
+/* ==============================================================
+   SHARED SECTION SCAFFOLDING
+   ============================================================== */
+.section{ padding: 72px 0; border-bottom: 1px solid var(--hairline); }
+.section:last-of-type{ border-bottom: none; }
+
+.section-title{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(1.55rem, 2.6vw, 1.85rem);
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.section-sub{ font-size: 0.95rem; color: var(--slate); margin-bottom: 42px; }
+
+.subheading{
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin: 52px 0 24px;
+}
+.subheading:first-of-type{ margin-top: 0; }
+
+/* ==============================================================
+   3. RESEARCH
+   ============================================================== */
+.paper{ padding: 28px 0; border-bottom: 1px solid var(--hairline); }
+.paper:last-child{ border-bottom: none; }
+
+.paper-title{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.3rem;
+  line-height: 1.35;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.paper-authors{ font-size: 0.93rem; color: var(--slate); margin-bottom: 14px; }
+
+.paper-links{ display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+.paper-links a{
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--wash);
+  border: 1px solid var(--hairline);
+  padding: 6px 13px;
+  border-radius: var(--radius);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.paper-links a:hover{ text-decoration: none; border-color: var(--accent); }
+.paper-links svg{ stroke: var(--accent); }
+
+.abstract{
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 70ch;            /* readable measure */
+}
+.abstract .abstract-label{
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--slate);
+  margin-right: 8px;
+}
+
+/* Job Market Paper — featured, cream-tinted card */
+.jmp{
+  position: relative;
+  background: var(--wash-feature);
+  border: 1px solid var(--hairline);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 32px 36px;
+  box-shadow: var(--shadow-card);
+}
+.jmp-flag{
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--accent);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+.jmp .paper{ padding: 0; border: none; }
+.jmp .paper-title{ font-size: clamp(1.35rem, 2.4vw, 1.6rem); line-height: 1.26; }
+
+.wip{ padding: 20px 0; border-bottom: 1px solid var(--hairline); max-width: 70ch; }
+.wip:last-child{ border-bottom: none; }
+.wip .wip-title{ font-weight: 600; font-size: 1.02rem; color: var(--ink); margin-bottom: 2px; }
+.wip .wip-authors{ font-size: 0.88rem; color: var(--slate); margin-bottom: 8px; }
+.wip p{ font-size: 0.94rem; color: var(--ink-soft); }
+
+/* ==============================================================
+   4. PRESENTATIONS
+   ============================================================== */
+.pres-year-block{ margin-bottom: 40px; }
+.pres-year-block:last-child{ margin-bottom: 0; }
+.pres-year{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--ink);
+  padding-bottom: 10px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--hairline);
+}
+.pres-list{ list-style: none; max-width: 70ch; }
+.pres-list li{
+  display: grid;
+  grid-template-columns: 108px 1fr;
+  gap: 20px;
+  padding: 11px 0;
+  border-bottom: 1px dashed var(--hairline);
+  font-size: 0.97rem;
+  color: var(--ink-soft);
+}
+.pres-list li:last-child{ border-bottom: none; }
+.pres-list .pres-kind{
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+  padding-top: 3px;
+}
+.pres-note{ color: var(--slate); font-size: 0.88rem; }
+
+/* ==============================================================
+   5. TEACHING
+   ============================================================== */
+.teach-inst{ margin-bottom: 48px; }
+.teach-inst:last-child{ margin-bottom: 0; }
+.teach-inst-name{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--ink);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--hairline);
+}
+.teach-role{
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--accent);
+  margin: 22px 0 10px;
+}
+.teach-role:first-of-type{ margin-top: 0; }
+.course-list{ list-style: none; max-width: 70ch; }
+.course-list li{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+  padding: 9px 0;
+  border-bottom: 1px dashed var(--hairline);
+  font-size: 0.97rem;
+  color: var(--ink-soft);
+}
+.course-list li:last-child{ border-bottom: none; }
+.course-name{ font-weight: 500; color: var(--ink); }
+.course-level{
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--slate);
+  background: var(--wash);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+.course-term{ margin-left: auto; font-size: 0.88rem; color: var(--slate); white-space: nowrap; }
+
+/* ==============================================================
+   6. EDUCATION TIMELINE
+   ============================================================== */
+.timeline{ list-style: none; position: relative; padding-left: 28px; max-width: 660px; }
+.timeline::before{
+  content: "";
+  position: absolute;
+  left: 5px; top: 6px; bottom: 6px;
+  width: 1.5px;
+  background: var(--hairline);
+}
+.timeline li{ position: relative; padding-bottom: 32px; }
+.timeline li:last-child{ padding-bottom: 0; }
+.timeline li::before{
+  content: "";
+  position: absolute;
+  left: -28px; top: 7px;
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--accent);
+}
+.timeline .tl-years{
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 3px;
+}
+.timeline .tl-role{ font-weight: 600; font-size: 1.03rem; color: var(--ink); }
+.timeline .tl-inst{ color: var(--slate); font-size: 0.95rem; }
+.timeline .tl-note{ color: var(--slate); font-size: 0.88rem; margin-top: 3px; }
+
+/* ==============================================================
+   7. REFERENCES
+   ============================================================== */
+.ref-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 760px;
+}
+.ref-card{
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-card);
+}
+.ref-name{ font-family: var(--serif); font-weight: 600; font-size: 1.08rem; color: var(--ink); margin-bottom: 3px; }
+.ref-role{ font-size: 0.88rem; color: var(--slate); margin-bottom: 10px; line-height: 1.5; }
+.ref-card a{ font-size: 0.88rem; font-weight: 500; }
+
+/* ==============================================================
+   8. FOOTER — tonal member of the same palette
+   ============================================================== */
+.site-footer{
+  background: var(--footer-bg);
+  color: var(--footer-fg);
+  padding: 56px 0 28px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.footer-grid{
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--footer-line);
+}
+.footer-name{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--footer-fg-strong);
+  margin-bottom: 12px;
+}
+.footer-addr{ font-style: normal; font-size: 0.92rem; line-height: 1.75; }
+.footer-links{ display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.footer-links a{
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--footer-fg-strong);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.footer-links a:hover{ text-decoration: underline; text-underline-offset: 3px; }
+.footer-links svg{ stroke: currentColor; }
+.copyright{ padding-top: 22px; font-size: 0.82rem; color: var(--footer-muted); text-align: center; }
+
+/* ==============================================================
+   RESPONSIVE
+   ============================================================== */
+@media (max-width: 900px){
+  .hero-grid{ grid-template-columns: 1fr; gap: 40px; }
+  .hero-photo{ order: -1; }
+  .headshot-frame{ justify-self: start; max-width: 220px; }
+  .hero{ padding: 52px 0 44px; }
+  .footer-grid{ grid-template-columns: 1fr; gap: 30px; }
+  .footer-links{ align-items: flex-start; }
+}
+
+@media (max-width: 720px){
+  .nav-burger{ display: inline-flex; }
+  .nav-right{
+    position: absolute;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--hairline);
+    padding: 8px 20px 16px;
+    box-shadow: var(--shadow-card);
+    display: none;
+  }
+  .nav-right.open{ display: flex; }
+  .nav-links{ flex-direction: column; align-items: stretch; gap: 0; }
+  .nav-links a{ padding: 11px 0; border-bottom: 1px solid var(--hairline); }
+  .nav-cv{ margin-top: 12px; justify-content: center; }
+  .nav-right .theme-toggle{ display: none; } /* bar toggle covers mobile */
+}
+@media (min-width: 721px){
+  .nav-bar-controls .theme-toggle{ display: none; } /* desktop toggle lives in nav-right */
+}
+
+@media (max-width: 640px){
+  body{ font-size: 15.5px; }
+  .wrap, .site-nav .nav-inner{ padding-left: 20px; padding-right: 20px; }
+  .section{ padding: 52px 0; }
+  .jmp{ padding: 24px 20px; }
+  .pres-list li{ grid-template-columns: 90px 1fr; gap: 14px; }
+  .course-term{ margin-left: 0; flex-basis: 100%; }
+  .hero-anchors{ gap: 18px; margin-top: 40px; }
+  .cta-row .btn{ flex: 1 1 auto; justify-content: center; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ==============================================================
+     1. HEADER & NAVIGATION
+     ============================================================== -->
+<header class="site-nav">
+  <nav class="nav-inner" aria-label="Main navigation">
+    <a class="brand" href="#top">Omar Al Humsi</a>
+
+    <!-- Bar controls visible on mobile: toggle + burger, both borderless -->
+    <div class="nav-bar-controls">
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" onclick="toggleTheme()">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="nav-right" id="navRight">
+      <ul class="nav-links">
+        <li><a href="#research">Research</a></li>
+        <li><a href="#presentations">Presentations</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+      <!-- EDIT HERE: [CV PDF path] -->
+      <a class="nav-cv" href="assets/cv.pdf" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        CV (PDF)
+      </a>
+      <!-- Desktop toggle: quiet glyph at the far upper-right -->
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" onclick="toggleTheme()">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ==============================================================
+     2. HERO — CONTACT & AFFILIATION (EJM slot #1)
+     ============================================================== -->
+<section class="hero" id="about">
+  <div class="wrap">
+    <div class="hero-grid">
+
+      <div class="hero-text">
+        <p class="hero-kicker">Economics Job Market Candidate · 2026–27</p>
+
+        <h1>Omar Al Humsi</h1>
+
+        <p class="affiliation">
+          <strong>PhD Candidate in Economics</strong><br>
+          THEMA, CY Cergy Paris Université &amp; ESSEC Business School
+        </p>
+
+        <!-- EDIT HERE: [Bio — confirm interview venues you'll attend] -->
+        <p class="bio">
+          I am an economist working in public economics, labor economics, and macroeconomics.
+          My research studies optimal redistributive taxation in labor markets with collective
+          wage bargaining. I am on the 2026–27 economics job market and available for
+          interviews (EEA/EJME and ASSA).
+        </p>
+
+        <div class="fields" aria-label="Research fields">
+          <span class="field-tag is-primary">Public Economics</span>
+          <span class="field-tag is-primary">Labor Economics</span>
+          <span class="field-tag">Macroeconomics</span>
+          <span class="field-tag">Optimal Taxation</span>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:omar.al-humsi@cyu.fr">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+            Email Me
+          </a>
+          <!-- EDIT HERE: [JMP PDF path] -->
+          <a class="btn btn-ghost" href="assets/jmp.pdf" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Job Market Paper
+          </a>
+          <a class="btn btn-ghost" href="assets/cv.pdf" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+        </div>
+      </div>
+
+      <!-- SQUARE HEADSHOT -->
+      <div class="hero-photo">
+        <figure class="headshot-frame">
+          <!-- EDIT HERE: [Square headshot at assets/headshot.jpg, 1:1 crop, ≥800×800px] -->
+          <img src="assets/headshot.jpg" alt="Portrait of Omar Al Humsi" width="800" height="800">
+          <figcaption class="headshot-caption">
+            <a href="mailto:omar.al-humsi@cyu.fr">omar.al-humsi@cyu.fr</a>
+          </figcaption>
+        </figure>
+      </div>
+
+    </div>
+
+    <div class="hero-anchors">
+      <a href="#research"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>Research</a>
+      <a href="#teaching"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>Teaching</a>
+      <a href="#references"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>References</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================================
+     3. RESEARCH (EJM slot #2 — JMP first, immediately after contact)
+     ============================================================== -->
+<section class="section" id="research">
+  <div class="wrap">
+    <h2 class="section-title">Research</h2>
+    <p class="section-sub">Job market paper, working papers, and works in progress.</p>
+
+    <h3 class="subheading">Job Market Paper</h3>
+
+    <!-- EDIT HERE: [Confirm this is your JMP — it is the first paper on your CV.
+         If your JMP is the directed-technical-change paper instead, swap the
+         titles between this card and Working Papers below.] -->
+    <div class="jmp">
+      <span class="jmp-flag">Job Market Paper</span>
+      <article class="paper">
+        <h4 class="paper-title">Redistributive Income Taxation with Collective Wage Bargaining and Investment Hold-Up</h4>
+        <p class="paper-authors">Sole author</p>
+
+        <div class="paper-links">
+          <!-- EDIT HERE: [JMP file paths] -->
+          <a href="assets/jmp.pdf" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Paper (PDF)
+          </a>
+          <a href="assets/jmp_slides.pdf" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Slides
+          </a>
+        </div>
+
+        <!-- EDIT HERE: [Paste your final JMP abstract — this placeholder only sketches the shape] -->
+        <p class="abstract">
+          <span class="abstract-label">Abstract</span>
+          How should redistributive income taxes be designed when wages are set through collective
+          bargaining and firms under-invest because of hold-up? I study optimal nonlinear labor
+          income taxation in a framework where union wage-setting distorts both employment and firm
+          investment. [Replace with your final abstract: state the mechanism, the main analytical
+          result, and the policy implication for optimal marginal tax rates.]
+        </p>
+      </article>
+    </div>
+
+    <h3 class="subheading">Working Papers</h3>
+
+    <!-- Real title from your CV (Work in Progress list) -->
+    <article class="paper">
+      <h4 class="paper-title">Redistributive Income Taxation, Directed Technical Change, and Union Wage Bargaining</h4>
+      <p class="paper-authors">Sole author</p>
+      <div class="paper-links">
+        <!-- EDIT HERE: [Add PDF/slides when a draft is circulated, or remove links] -->
+        <a href="assets/wp1.pdf" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Draft (PDF)
+        </a>
+      </div>
+      <!-- EDIT HERE: [Abstract or 2–3 sentence summary] -->
+      <p class="abstract">
+        <span class="abstract-label">Abstract</span>
+        [Two to four sentences: the question — how directed technical change interacts with union
+        wage bargaining in shaping optimal redistributive taxation — the framework, and the headline result.]
+      </p>
+    </article>
+
+    <h3 class="subheading">Works in Progress</h3>
+
+    <!-- Real title from your CV -->
+    <div class="wip">
+      <p class="wip-title">Optimal Income Taxation with Oligopsony and Collective Bargaining</p>
+      <p class="wip-authors">Sole author</p>
+      <!-- EDIT HERE: [1–2 sentences on question and approach] -->
+      <p>This project studies the design of redistributive income taxes when employers hold wage-setting power and workers bargain collectively.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==============================================================
+     4. PRESENTATIONS
+     ============================================================== -->
+<section class="section" id="presentations">
+  <div class="wrap">
+    <h2 class="section-title">Presentations</h2>
+    <p class="section-sub">Conferences, seminars, workshops, and summer schools.</p>
+
+    <div class="pres-year-block">
+      <h3 class="pres-year">2026</h3>
+      <ul class="pres-list">
+        <li><span class="pres-kind">Seminar</span><span>THEMA Theoretical and Applied Economics Seminar, CY Cergy Paris Université</span></li>
+      </ul>
+    </div>
+
+    <div class="pres-year-block">
+      <h3 class="pres-year">2025</h3>
+      <ul class="pres-list">
+        <li><span class="pres-kind">Conference</span><span>24th Journées Louis-André Gérard-Varet (LAGV), Marseille, France</span></li>
+        <li><span class="pres-kind">Conference</span><span>Public Economic Theory Conference (PET), Lisbon, Portugal</span></li>
+        <li><span class="pres-kind">School</span><span>École Thématique sur l'Évaluation des Politiques Publiques (ETEPP), CNRS</span></li>
+      </ul>
+    </div>
+
+    <div class="pres-year-block">
+      <h3 class="pres-year">Since 2023</h3>
+      <ul class="pres-list">
+        <li><span class="pres-kind">Workshop</span><span>Taxation Workshop, Paris</span></li>
+        <li><span class="pres-kind">Seminar</span><span>THEMA Theoretical and Applied Economics Seminar, CY Cergy Paris Université</span></li>
+        <li><span class="pres-kind">Seminar</span><span>ESSEC Internal Seminar &amp; PhD Seminar, CY Cergy Paris Université</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================================
+     5. TEACHING
+     ============================================================== -->
+<section class="section" id="teaching">
+  <div class="wrap">
+    <h2 class="section-title">Teaching</h2>
+    <p class="section-sub">Grouped by institution.</p>
+
+    <div class="teach-inst">
+      <h3 class="teach-inst-name">CY Cergy Paris Université</h3>
+      <p class="teach-role">Teaching Assistant</p>
+      <ul class="course-list">
+        <li>
+          <span class="course-name">Macroeconomics</span>
+          <span class="course-level">Undergraduate — L1</span>
+          <span class="course-term">2025–26</span>
+        </li>
+        <li>
+          <span class="course-name">Statistical Analysis</span>
+          <span class="course-level">Undergraduate — L2</span>
+          <span class="course-term">2024–25</span>
+        </li>
+        <li>
+          <span class="course-name">Computer Science</span>
+          <span class="course-level">Undergraduate — L2</span>
+          <span class="course-term">2023–25</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="teach-inst">
+      <h3 class="teach-inst-name">ESSEC Business School</h3>
+      <p class="teach-role">Teaching Assistant</p>
+      <ul class="course-list">
+        <li>
+          <span class="course-name">Microeconomics</span>
+          <span class="course-level">Pre-Master</span>
+          <span class="course-term">2023–24</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================================
+     6. EDUCATION
+     ============================================================== -->
+<section class="section" id="background">
+  <div class="wrap">
+    <h2 class="section-title">Education</h2>
+    <p class="section-sub">Degrees and fellowships.</p>
+
+    <ul class="timeline">
+      <li>
+        <div class="tl-years">2022 — Present</div>
+        <div class="tl-role">PhD in Economics</div>
+        <div class="tl-inst">THEMA, CY Cergy Paris Université &amp; ESSEC Business School</div>
+        <div class="tl-note">Supervisors: Olivier Charlot &amp; Laurence Jacquet</div>
+      </li>
+      <li>
+        <div class="tl-years">2020 — 2022</div>
+        <div class="tl-role">Master's in Economic Analysis</div>
+        <div class="tl-inst">CY Cergy Paris Université &amp; ESSEC Business School</div>
+        <div class="tl-note">French MEAE Scholarship</div>
+      </li>
+      <li>
+        <div class="tl-years">2019 — 2020</div>
+        <div class="tl-role">Master's in International Business</div>
+        <div class="tl-inst">École de Management Léonard de Vinci (EMLV), Paris</div>
+        <div class="tl-note">French MEAE Scholarship</div>
+      </li>
+      <li>
+        <div class="tl-years">2016 — 2018</div>
+        <div class="tl-role">Master's in Business Administration</div>
+        <div class="tl-inst">German Jordanian University</div>
+        <div class="tl-note">DAAD Scholarship</div>
+      </li>
+      <li>
+        <div class="tl-years"><!-- EDIT HERE: [BA years] --></div>
+        <div class="tl-role">Bachelor's in Economics</div>
+        <div class="tl-inst">Damascus University</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==============================================================
+     7. REFERENCES (EJM convention: named, with contact)
+     ============================================================== -->
+<section class="section" id="references">
+  <div class="wrap">
+    <h2 class="section-title">References</h2>
+    <p class="section-sub">Doctoral supervisors and references.</p>
+
+    <div class="ref-grid">
+      <!-- EDIT HERE: [Confirm each referee's exact title and email, and ask
+           their permission before listing contact details publicly] -->
+      <div class="ref-card">
+        <p class="ref-name">Olivier Charlot</p>
+        <p class="ref-role">Professor of Economics<br>CY Cergy Paris Université (THEMA)<br>PhD Supervisor</p>
+        <a href="mailto:[email]">[email]</a>
+      </div>
+      <div class="ref-card">
+        <p class="ref-name">Laurence Jacquet</p>
+        <p class="ref-role">Professor of Economics<br>CY Cergy Paris Université (THEMA)<br>PhD Supervisor</p>
+        <a href="mailto:[email]">[email]</a>
+      </div>
+      <!-- EDIT HERE: [Optional third referee — committees typically expect three] -->
+      <div class="ref-card">
+        <p class="ref-name">[Third Referee]</p>
+        <p class="ref-role">[Title]<br>[Institution]</p>
+        <a href="mailto:[email]">[email]</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ==============================================================
+     8. FOOTER
+     ============================================================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+
+      <div>
+        <p class="footer-name">Omar Al Humsi</p>
+        <address class="footer-addr">
+          THEMA — UMR CNRS 8184<br>
+          CY Cergy Paris Université<br>
+          33 boulevard du Port<br>
+          95000 Cergy, France
+        </address>
+      </div>
+
+      <div class="footer-links">
+        <a href="mailto:omar.al-humsi@cyu.fr">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+          omar.al-humsi@cyu.fr
+        </a>
+        <a href="assets/cv.pdf" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Curriculum Vitae (PDF)
+        </a>
+        <a href="https://www.linkedin.com/in/omar-al-humsi-ab4485139/" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+
+    </div>
+
+    <p class="copyright">&copy; 2026 Omar Al Humsi · Built with plain HTML &amp; CSS</p>
+  </div>
+</footer>
+
+<script>
+  function toggleTheme() {
+    var root = document.documentElement;
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  }
+  function toggleMenu(btn) {
+    var panel = document.getElementById('navRight');
+    var open = panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  document.getElementById('navRight').addEventListener('click', function (e) {
+    if (e.target.closest('a')) {
+      this.classList.remove('open');
+      var burger = document.querySelector('.nav-burger');
+      if (burger) burger.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
+
+</body>
+</html>
