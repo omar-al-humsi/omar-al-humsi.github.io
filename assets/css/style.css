@@ -142,13 +142,16 @@ main:focus { outline: none; }
 .site-header__inner {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 0.35rem 1.5rem;
   padding-block: 0.8rem;
 }
 
 .site-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   color: var(--text);
   font-size: 1.1rem;
   font-weight: 700;
@@ -156,6 +159,12 @@ main:focus { outline: none; }
 }
 
 .site-name:hover { color: var(--accent); }
+
+.site-name__icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 5px;
+}
 
 .site-nav ul {
   display: flex;
