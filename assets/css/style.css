@@ -191,7 +191,7 @@ main:focus { outline: none; }
 /* ---------- 4. Identity block ---------- */
 .intro {
   display: grid;
-  grid-template-columns: 6.5rem minmax(0, 1fr);
+  grid-template-columns: 8rem minmax(0, 1fr);
   gap: 1.25rem;
   align-items: center;
   padding-block: 1.75rem 2rem;
@@ -220,8 +220,8 @@ main:focus { outline: none; }
 
 @media (min-width: 40rem) {
   .intro {
-    grid-template-columns: 11rem minmax(0, 1fr);
-    column-gap: 2.25rem;
+    grid-template-columns: 14rem minmax(0, 1fr);
+    column-gap: 2.5rem;
     row-gap: 1rem;
     align-items: start;
     padding-block: 2.25rem 2rem;
@@ -236,7 +236,7 @@ main:focus { outline: none; }
 }
 
 .intro h1 {
-  font-size: clamp(1.8rem, 1.35rem + 2vw, 2.6rem);
+  font-size: clamp(1.6rem, 1.1rem + 2.4vw, 2.6rem);
   letter-spacing: -0.01em;
 }
 
