@@ -210,7 +210,7 @@ main:focus { outline: none; }
   grid-column: 1;
   grid-row: 1;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
