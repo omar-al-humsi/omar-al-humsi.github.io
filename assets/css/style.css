@@ -200,16 +200,16 @@ main:focus { outline: none; }
 /* ---------- 4. Identity block ---------- */
 .intro {
   display: grid;
-  grid-template-columns: 8rem minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.25rem;
-  align-items: center;
+  align-items: start;
   padding-block: 1.75rem 2rem;
 }
 
 .intro__photo {
   grid-column: 1;
   grid-row: 1;
-  width: 100%;
+  width: min(100%, 16rem);
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border: 1px solid var(--rule);
@@ -218,25 +218,32 @@ main:focus { outline: none; }
 }
 
 .intro__head {
-  grid-column: 2;
-  grid-row: 1;
+  grid-column: 1;
+  grid-row: 2;
 }
 
 .intro__body {
-  grid-column: 1 / -1;
-  grid-row: 2;
+  grid-column: 1;
+  grid-row: 3;
 }
 
 @media (min-width: 40rem) {
   .intro {
-    grid-template-columns: 14rem minmax(0, 1fr);
+    grid-template-columns: clamp(14rem, 30vw, 18rem) minmax(0, 1fr);
     column-gap: 2.5rem;
     row-gap: 1rem;
-    align-items: start;
     padding-block: 2.25rem 2rem;
   }
 
-  .intro__photo { grid-row: 1 / span 2; }
+  .intro__photo {
+    width: 100%;
+    grid-row: 1 / span 2;
+  }
+
+  .intro__head {
+    grid-column: 2;
+    grid-row: 1;
+  }
 
   .intro__body {
     grid-column: 2;
