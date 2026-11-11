@@ -317,6 +317,16 @@ main:focus { outline: none; }
 }
 .paper-links { margin-top: 1rem; }
 
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.4rem;
+  margin-top: 1.1rem;
+  font-family: var(--font-ui);
+  font-size: 0.975rem;
+  font-weight: 600;
+}
+
 /* ---------- 5. Buttons ---------- */
 .btn {
   display: inline-block;
@@ -354,7 +364,7 @@ main:focus { outline: none; }
 }
 
 /* ---------- 6. Job market paper ---------- */
-.jmp { padding-bottom: 2.75rem; }
+.jmp { padding-bottom: 2.25rem; }
 
 .jmp__panel {
   padding: 1.4rem 1.25rem 1.5rem;
@@ -385,7 +395,10 @@ main:focus { outline: none; }
 
 .jmp__title a {
   color: var(--text);
-  text-decoration: none;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  text-underline-offset: 0.2em;
 }
 
 .jmp__title a:hover {
@@ -426,7 +439,7 @@ main:focus { outline: none; }
 
 /* ---------- 7. Sections ---------- */
 .section {
-  padding-block: 2.5rem;
+  padding-block: 2.1rem;
   border-top: 1px solid var(--rule);
 }
 
@@ -456,7 +469,7 @@ main:focus { outline: none; }
 
 .section--plain { border-top: 0; }
 
-.paper + .paper { margin-top: 1.5rem; }
+.paper + .paper { margin-top: 1.4rem; }
 
 .paper__title {
   font-size: 1.15rem;
@@ -511,6 +524,35 @@ main:focus { outline: none; }
 
 cite { font-style: italic; }
 
+/* Teaching: one line per course, term on the right */
+.teach-list {
+  padding: 0;
+  list-style: none;
+}
+
+.teach-list > li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.25rem 1.25rem;
+  padding-block: 0.45rem;
+  border-top: 1px solid var(--rule);
+}
+
+.teach-list > li:first-child { border-top: 0; padding-top: 0; }
+
+.teach-list .when {
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+@media (max-width: 39.99rem) {
+  .teach-list > li { flex-direction: column; }
+}
+
 /* References */
 .refs {
   display: grid;
@@ -564,6 +606,13 @@ address { font-style: normal; }
   font-size: 0.85rem;
 }
 
+.site-footer__inner {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.site-footer address { line-height: 1.55; }
+
 /* ---------- 9. Print: a clean one-column handout ---------- */
 @media print {
   :root {
@@ -581,7 +630,8 @@ address { font-style: normal; }
   .skip-link,
   .site-nav,
   .actions,
-  .paper-links { display: none; }
+  .paper-links,
+  .quick-links { display: none; }
 
   .site-header { position: static; }
 
@@ -598,5 +648,8 @@ address { font-style: normal; }
   .cv-list > li,
   .refs > li { break-inside: avoid; }
 
-  a { text-decoration: none; }
+  a,
+  .jmp__title a { text-decoration: none; }
+
+  h2, h3 { break-after: avoid; }
 }
