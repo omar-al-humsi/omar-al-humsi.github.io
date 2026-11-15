@@ -421,6 +421,19 @@ main:focus { outline: none; }
   color: var(--text-soft);
 }
 
+/* Tablets and laptops: the abstract fills the panel and is justified, so its
+   right edge lines up with the "Presented at" line. Phones keep left-aligned
+   text, because a ~38-character line leaves wide gaps when justified. */
+@media (min-width: 40rem) {
+  .abstract {
+    max-width: none;
+    text-align: justify;
+    -webkit-hyphens: auto;   /* hyphenation uses <html lang="en"> */
+    hyphens: auto;
+    hyphenate-limit-chars: 6 3 3;
+  }
+}
+
 .abstract p + p { margin-top: 0.75rem; }
 
 .presented {
