@@ -256,6 +256,13 @@ main:focus { outline: none; }
   letter-spacing: -0.01em;
 }
 
+/* Surname shown in capitals ("AL HUMSI"), as on the JMP title page. The HTML
+   keeps "Al Humsi" so screen readers say the name instead of spelling it. */
+.surname {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
 .intro__role {
   margin-top: 0.4rem;
   color: var(--text-soft);
