@@ -495,6 +495,19 @@ main:focus { outline: none; }
   color: var(--text-soft);
 }
 
+/* Tablets and laptops: paper summaries are justified and fill the column, like
+   the JMP abstract (at 68ch, justified lines leave wide word gaps). Phones keep
+   left-aligned text. */
+@media (min-width: 40rem) {
+  .paper__summary {
+    max-width: none;
+    text-align: justify;
+    -webkit-hyphens: auto;   /* hyphenation uses <html lang="en"> */
+    hyphens: auto;
+    hyphenate-limit-chars: 6 3 3;
+  }
+}
+
 /* CV-style list: date column + content (presentations, teaching, education) */
 .cv-list {
   padding: 0;
