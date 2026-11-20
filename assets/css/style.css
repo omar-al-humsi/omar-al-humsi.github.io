@@ -284,6 +284,17 @@ main:focus { outline: none; }
   color: var(--text-soft);
 }
 
+/* Tablets and laptops: the bio is justified, like the abstracts. Phones keep
+   left-aligned text. */
+@media (min-width: 40rem) {
+  .intro__bio {
+    text-align: justify;
+    -webkit-hyphens: auto;   /* hyphenation uses <html lang="en"> */
+    hyphens: auto;
+    hyphenate-limit-chars: 6 3 3;
+  }
+}
+
 .facts {
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr);
